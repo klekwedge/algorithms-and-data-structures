@@ -1,19 +1,29 @@
-// Implement a function that takes two parameters:
-// array of values
-// callback, by the result of which the values will be grouped
-// The function must return a compound aggregate object where the
-// keys are the names of the groups and the values are the groups themselves.
+const START = Date.now();
+// console.log(START);
 
-const groupBy = (arr, callbackFunction) => {
-  const result = {};
-  arr.forEach((item) => {
-    let resultAfterCallback = callbackFunction(item);
-    result[resultAfterCallback]
-      ? result[resultAfterCallback].push(item)
-      : (result[resultAfterCallback] = [item]);
-  });
+function someFn() {
+  console.log('time', Date.now() - START);
+  console.log('args', arguments);
+}
 
-  console.log(result);
+// someFn();
+// time 8
+// args [Arguments] {}
+
+Function.prototype.delay = function (ms) {
+  return (...args) => {
+    setTimeout(() => {
+      // console.log(this);
+      // this();
+      this.call(this, ...args)
+    }, ms);
+  };
+
+  // return function () {
+  //   console.log(this);
+  // }.bind(this);
 };
 
-groupBy([6.1, 4.5, 6.4], Math.floor); // { '4': [ 4.5 ], '6': [ 6.1, 6.4 ] }
+const f = someFn.delay(1500);
+
+f('arg1', 'arg2', 1, 2); // args [Arguments] { '0': 'arg1', '1': 'arg2', '2': 1, '3': 2 }
