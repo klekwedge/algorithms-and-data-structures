@@ -1,3 +1,5 @@
+// Задача программирования 2: подпоследовательность с максимальной суммой
+
 function maxSumSubsequence(data, n) {
   if (!Array.isArray(data)) {
     return null;
