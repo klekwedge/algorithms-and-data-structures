@@ -5,9 +5,27 @@
 
 function rotate(arr, step) {
   step %= arr.length;
+
   reverse(arr, 0, arr.length - 1);
+  console.log(arr);
+//   [
+//     7, 6, 5, 4,
+//     3, 2, 1
+//   ]
+
   reverse(arr, 0, step - 1);
+  console.log(arr);
+//   [
+//     4, 5, 6, 7,
+//     3, 2, 1
+//   ]
+
   reverse(arr, step, arr.length - 1);
+  console.log(arr);
+//   [
+//     4, 5, 6, 7,
+//     1, 2, 3
+//   ]
 
   return arr;
 }
