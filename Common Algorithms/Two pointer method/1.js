@@ -23,4 +23,6 @@ function isPairSum(arr, x) {
 }
 
 const arr = [10, 20, 35, 50, 75, 80];
+
 console.log(isPairSum(arr, 70));
+// true
