@@ -1,3 +1,5 @@
+// LIFO (последним пришел – первым вышел)
+
 class LinkedListNode {
   constructor(value, next = null) {
     this.value = value;
@@ -148,9 +150,28 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList();
-list.append(5);
-list.append(3);
-list.append(2);
-list.append(5);
-list.append(7);
+class Stack {
+  constructor() {
+    this.linkedList = new LinkedList();
+  }
+
+  isEmpty() {
+    return !this.linkedList.head;
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.linkedList.head.value;
+  }
+
+  push(value) {
+    this.linkedList.prepend(value);
+  }
+
+  pop() {
+    const removedHead = this.linkedList.deleteHead();
+    return removedHead ? removedHead.value : null;
+  }
+}
