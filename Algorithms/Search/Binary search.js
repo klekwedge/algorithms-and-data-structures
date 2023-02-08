@@ -22,4 +22,4 @@ function binarySearch(arr, wanted) {
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
 console.log(binarySearch(arr, 8));
-// 5
+// 7
