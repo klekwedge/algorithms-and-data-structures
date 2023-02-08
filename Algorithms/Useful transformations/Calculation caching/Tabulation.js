@@ -7,3 +7,6 @@ function fibonacciTabulation(n) {
   }
   return cache[n];
 }
+
+console.log(fibonacciTabulation(10));
+// 55

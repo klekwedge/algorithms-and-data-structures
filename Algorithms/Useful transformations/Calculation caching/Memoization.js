@@ -14,3 +14,6 @@ function fibonacciMemoization(n) {
 
   return recursive(n);
 }
+
+console.log(fibonacciMemoization(10));
+// 55
