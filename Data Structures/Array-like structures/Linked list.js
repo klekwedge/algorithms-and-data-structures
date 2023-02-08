@@ -68,6 +68,77 @@ class LinkedList {
       this.tail = current;
     }
   }
+
+  deleteHead() {
+    if (!this.head) return null;
+    let deletedHead = this.head;
+
+    if (this.head.next) {
+      this.head = this.head.next;
+    } else {
+      this.head = null;
+      this.tail = null;
+    }
+
+    return deletedHead;
+  }
+
+  deleteTail() {
+    const deletedTail = this.tail;
+    if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+      return deletedTail;
+    }
+
+    // найти предпоследний элемент списка
+    // и сделать его новым хвостом
+    let current = this.head;
+    while (current.next) {
+      if (!current.next.next) {
+        current.next = null;
+      } else {
+        current = current.next;
+      }
+    }
+
+    this.tail = current;
+
+    return deletedTail;
+  }
+
+  forEach(callback) {
+    let current = this.head;
+    while (current) {
+      callback(current.value);
+      current = current.next;
+    }
+  }
+
+  reverseForEach(callback) {
+    function tick(node) {
+      if (node) {
+        tick(node.next);
+        callback(node.value);
+      }
+    }
+
+    tick(this.head);
+  }
+
+  find(value) {
+    if (!this.head) return null;
+
+    let current = this.head;
+
+    while (current) {
+      if (this.comparator(current.value, value) === 0) {
+        return current;
+      }
+      current = current.next;
+    }
+    return null;
+  }
 }
 
 const list = new LinkedList();
