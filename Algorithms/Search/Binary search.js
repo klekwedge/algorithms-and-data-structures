@@ -19,7 +19,7 @@ function binarySearch(arr, wanted) {
   return -1;
 }
 
-const arr = [5, 3, 1, 6, 7, 8, 2, 4];
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
 console.log(binarySearch(arr, 8));
 // 5
