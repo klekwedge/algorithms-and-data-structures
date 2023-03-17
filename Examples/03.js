@@ -1,3 +1,5 @@
+// https://youtu.be/dsSwNv5edfM
+
 function findVowels(str) {
   let count = 0;
   const vowels = ["a", "e", "i", "o", "u"];

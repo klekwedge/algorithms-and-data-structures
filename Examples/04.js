@@ -1,3 +1,5 @@
+// https://youtu.be/YlxIvmrijmY
+
 function buildCharObject(str) {
   const charObj = {};
   str = str.toLowerCase().replace(/[^\w]/g);

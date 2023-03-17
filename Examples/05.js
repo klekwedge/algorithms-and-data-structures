@@ -1,3 +1,5 @@
+// https://youtu.be/6XOLmjKB4ls
+
 function fibonacci(num) {
   const result = [0, 1];
 
